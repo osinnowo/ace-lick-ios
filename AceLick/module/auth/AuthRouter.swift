@@ -21,7 +21,7 @@ final class AuthRouter: AuthRouterProtocol {
         var router = AuthRouter()
         var presenter = AuthPresenter()
         var interactor = AuthInteractor()
-        var view = AuthView()
+        var view = AuthViewController()
         
         presenter.interactor = interactor
         presenter.view = view

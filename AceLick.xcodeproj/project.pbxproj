@@ -15,14 +15,18 @@
 		FD6A4CC42A11328E0058C35C /* AceLickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A4CC32A11328E0058C35C /* AceLickTests.swift */; };
 		FD6A4CCE2A11328E0058C35C /* AceLickUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A4CCD2A11328E0058C35C /* AceLickUITests.swift */; };
 		FD6A4CD02A11328E0058C35C /* AceLickUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A4CCF2A11328E0058C35C /* AceLickUITestsLaunchTests.swift */; };
-		FD6A4CE92A1133AD0058C35C /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A4CE82A1133AD0058C35C /* AuthView.swift */; };
-		FD6A4CEB2A1133CF0058C35C /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A4CEA2A1133CF0058C35C /* BaseView.swift */; };
+		FD6A4CE92A1133AD0058C35C /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A4CE82A1133AD0058C35C /* AuthViewController.swift */; };
+		FD6A4CEB2A1133CF0058C35C /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A4CEA2A1133CF0058C35C /* BaseController.swift */; };
 		FD6A4CED2A1134070058C35C /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A4CEC2A1134070058C35C /* AuthPresenter.swift */; };
 		FD6A4CEF2A1134120058C35C /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A4CEE2A1134120058C35C /* AuthInteractor.swift */; };
 		FD6A4CF12A1134280058C35C /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A4CF02A1134280058C35C /* AuthRouter.swift */; };
 		FD6A4CF42A1134B10058C35C /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A4CF32A1134B10058C35C /* Auth.swift */; };
 		FD6A4CF72A1135BE0058C35C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A4CF62A1135BE0058C35C /* NetworkService.swift */; };
 		FD6A4CF92A1135C60058C35C /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A4CF82A1135C60058C35C /* DatabaseService.swift */; };
+		FD6A4CFC2A113BC50058C35C /* AceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A4CFB2A113BC50058C35C /* AceButton.swift */; };
+		FD6A4CFF2A11799E0058C35C /* UIView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A4CFE2A11799E0058C35C /* UIView + Ext.swift */; };
+		FD6A4D012A117CC50058C35C /* UIColor + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6A4D002A117CC50058C35C /* UIColor + Ext.swift */; };
+		FDCE50D92A1185F40098AE0B /* UIViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCE50D82A1185F40098AE0B /* UIViewController + Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,14 +59,18 @@
 		FD6A4CC92A11328E0058C35C /* AceLickUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AceLickUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6A4CCD2A11328E0058C35C /* AceLickUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AceLickUITests.swift; sourceTree = "<group>"; };
 		FD6A4CCF2A11328E0058C35C /* AceLickUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AceLickUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		FD6A4CE82A1133AD0058C35C /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
-		FD6A4CEA2A1133CF0058C35C /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		FD6A4CE82A1133AD0058C35C /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		FD6A4CEA2A1133CF0058C35C /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		FD6A4CEC2A1134070058C35C /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
 		FD6A4CEE2A1134120058C35C /* AuthInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractor.swift; sourceTree = "<group>"; };
 		FD6A4CF02A1134280058C35C /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		FD6A4CF32A1134B10058C35C /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		FD6A4CF62A1135BE0058C35C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		FD6A4CF82A1135C60058C35C /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		FD6A4CFB2A113BC50058C35C /* AceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AceButton.swift; sourceTree = "<group>"; };
+		FD6A4CFE2A11799E0058C35C /* UIView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext.swift"; sourceTree = "<group>"; };
+		FD6A4D002A117CC50058C35C /* UIColor + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Ext.swift"; sourceTree = "<group>"; };
+		FDCE50D82A1185F40098AE0B /* UIViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +121,7 @@
 		FD6A4CA82A11328B0058C35C /* AceLick */ = {
 			isa = PBXGroup;
 			children = (
+				FD6A4CFD2A11798A0058C35C /* extension */,
 				FD6A4CF52A1135AF0058C35C /* service */,
 				FD6A4CE52A1133020058C35C /* app */,
 				FD6A4CE62A1133170058C35C /* config */,
@@ -177,9 +186,10 @@
 		FD6A4CE52A1133020058C35C /* app */ = {
 			isa = PBXGroup;
 			children = (
+				FD6A4CFA2A113BB40058C35C /* components */,
 				FD6A4CAB2A11328B0058C35C /* SceneDelegate.swift */,
 				FD6A4CA92A11328B0058C35C /* AppDelegate.swift */,
-				FD6A4CEA2A1133CF0058C35C /* BaseView.swift */,
+				FD6A4CEA2A1133CF0058C35C /* BaseController.swift */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -195,7 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				FD6A4CF22A1134A10058C35C /* entity */,
-				FD6A4CE82A1133AD0058C35C /* AuthView.swift */,
+				FD6A4CE82A1133AD0058C35C /* AuthViewController.swift */,
 				FD6A4CEC2A1134070058C35C /* AuthPresenter.swift */,
 				FD6A4CEE2A1134120058C35C /* AuthInteractor.swift */,
 				FD6A4CF02A1134280058C35C /* AuthRouter.swift */,
@@ -218,6 +228,24 @@
 				FD6A4CF82A1135C60058C35C /* DatabaseService.swift */,
 			);
 			path = service;
+			sourceTree = "<group>";
+		};
+		FD6A4CFA2A113BB40058C35C /* components */ = {
+			isa = PBXGroup;
+			children = (
+				FD6A4CFB2A113BC50058C35C /* AceButton.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		FD6A4CFD2A11798A0058C35C /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				FD6A4CFE2A11799E0058C35C /* UIView + Ext.swift */,
+				FD6A4D002A117CC50058C35C /* UIColor + Ext.swift */,
+				FDCE50D82A1185F40098AE0B /* UIViewController + Ext.swift */,
+			);
+			path = extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,13 +382,17 @@
 				FD6A4CB42A11328B0058C35C /* AceLick.xcdatamodeld in Sources */,
 				FD6A4CAA2A11328B0058C35C /* AppDelegate.swift in Sources */,
 				FD6A4CEF2A1134120058C35C /* AuthInteractor.swift in Sources */,
-				FD6A4CEB2A1133CF0058C35C /* BaseView.swift in Sources */,
-				FD6A4CE92A1133AD0058C35C /* AuthView.swift in Sources */,
+				FD6A4CEB2A1133CF0058C35C /* BaseController.swift in Sources */,
+				FD6A4CE92A1133AD0058C35C /* AuthViewController.swift in Sources */,
+				FD6A4CFF2A11799E0058C35C /* UIView + Ext.swift in Sources */,
 				FD6A4CED2A1134070058C35C /* AuthPresenter.swift in Sources */,
+				FD6A4CFC2A113BC50058C35C /* AceButton.swift in Sources */,
+				FD6A4D012A117CC50058C35C /* UIColor + Ext.swift in Sources */,
 				FD6A4CF12A1134280058C35C /* AuthRouter.swift in Sources */,
 				FD6A4CAC2A11328B0058C35C /* SceneDelegate.swift in Sources */,
 				FD6A4CF42A1134B10058C35C /* Auth.swift in Sources */,
 				FD6A4CF92A1135C60058C35C /* DatabaseService.swift in Sources */,
+				FDCE50D92A1185F40098AE0B /* UIViewController + Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

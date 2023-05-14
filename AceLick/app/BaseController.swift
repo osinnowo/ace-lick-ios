@@ -7,6 +7,6 @@
 
 import UIKit
 
-protocol BaseView where Self: UIViewController {
+protocol BaseController where Self: UIViewController {
     
 }
