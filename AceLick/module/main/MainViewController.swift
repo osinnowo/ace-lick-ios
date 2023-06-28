@@ -1,5 +1,5 @@
 //
-//  AuthView.swift
+//  MainView.swift
 //  AceLick
 //
 //  Created by Osinnowo Emmanuel on 14/05/2023.
@@ -7,15 +7,16 @@
 
 import UIKit
 
-protocol AuthViewProtocol {
-    func perform(login with: Auth)
+protocol MainViewProtocol {
+    func perform(login with: Main)
     func didCompleteLogin()
     func showLoading()
     func hideLoading()
 }
 
-final class AuthViewController: UIViewController, BaseController, AuthViewProtocol, AceButtonDelegate {
-    var presenter: AuthPresenter?
+final class MainViewController: BaseController, MainViewProtocol, AceButtonDelegate {
+    var mainCoordinator: MainCoordinator?
+    var presenter: MainPresenter?
     
     private lazy var getStartedButton: AceButton = {
         let button = AceButton(
@@ -93,13 +94,13 @@ final class AuthViewController: UIViewController, BaseController, AuthViewProtoc
     }
     
     func onClick(sender: AceButton) {
-        print("Clicked!")
+        self.mainCoordinator?.showRegistration()
     }
 }
 
-extension AuthViewController {
+extension MainViewController {
     
-    func perform(login with: Auth) {
+    func perform(login with: Main) {
         
     }
     
