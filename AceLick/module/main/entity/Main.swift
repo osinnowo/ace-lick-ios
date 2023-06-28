@@ -7,9 +7,9 @@
 
 import UIKit
 
-struct Auth: Encodable {
+struct Main: Encodable {
     var email: String
     var password: String
 }
 
-struct AuthResponse: Decodable { }
+struct MainResponse: Decodable { }

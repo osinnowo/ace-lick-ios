@@ -13,6 +13,8 @@ extension UIColor {
     }
     
     static let primary = UIColor.rgb(red: 70, green: 43, blue: 152)
-    
+    static let lightGrey = UIColor.rgb(red: 221, green: 221, blue: 221)
+    static let kitYellow = UIColor.rgb(red: 201, green: 170, blue: 5)
+    static let kitGreen = UIColor.rgb(red: 14, green: 128, blue: 60)
 }
 

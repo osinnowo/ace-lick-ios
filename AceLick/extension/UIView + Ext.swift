@@ -46,10 +46,13 @@ public extension UIView {
         }
     }
 
-    func center(inView view: UIView, yConstant: CGFloat? = 0) {
+    func center(inView view: UIView, yConstant: CGFloat? = 0, width: CGFloat? = nil, height: CGFloat? = nil) {
         translatesAutoresizingMaskIntoConstraints = false
         centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: yConstant!).isActive = true
+        if let width = width, let height = height {
+            setDimensions(width: width, height: height)
+        }
     }
     
     func centerX(inView view: UIView,
