@@ -12,6 +12,11 @@ final class HomeController: BaseController {
     private var dataSource: CollectionViewDataSource<MenuCategoryCell, MenuItem>?
     private var menuItemSource: CollectionViewDataSource<MenuCell, MenuItem>?
     
+    private var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        return scrollView
+    }()
+    
     private var menuLabel: UILabel = {
         let label = UILabel()
         label.text = "Menu"
@@ -102,6 +107,36 @@ final class HomeController: BaseController {
         return textFieldField
     }()
     
+    private var offerLabel: UILabel = {
+        let label = UILabel()
+            label.text = "Today's Offer"
+            label.textColor = .white
+            label.font = .systemFont(ofSize: 16, weight: .semibold)
+        return label
+    }()
+    
+    private var discountLabel: UILabel = {
+        let label = UILabel()
+            label.text = "20% discount on fried chicken"
+            label.textColor = .white
+            label.font = .systemFont(ofSize: 16, weight: .semibold)
+        return label
+    }()
+    
+    private var promotionView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 10
+        view.layer.masksToBounds = true
+        return view
+    }()
+    
+    private var bannerImage: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "banner"))
+        imageView.layer.cornerRadius = 70
+        imageView.layer.masksToBounds = true
+        return imageView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -110,16 +145,38 @@ final class HomeController: BaseController {
         setupMenuItemCollection()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
+    
+    
     private func setupView() {
         view.addSubview(
             [
                 menuLabel,
                 profileImage,
                 searchEditText,
+                scrollView
+            ]
+        )
+        
+        //scrollView.backgroundColor = .systemGray
+        
+        scrollView.addSubview(
+            [
                 collectionView,
                 popularLabel,
                 menuItemCollectionView,
-                promotionLabel
+                promotionLabel,
+                promotionView,
+                bannerImage
+            ]
+        )
+        
+        promotionView.addSubview(
+            [
+                offerLabel,
+                discountLabel
             ]
         )
     }
@@ -148,11 +205,23 @@ final class HomeController: BaseController {
             height: 50
         )
         
-        collectionView.anchor(
+        scrollView.anchor(
             top: searchEditText.bottomAnchor,
             left: view.leftAnchor,
+            bottom: view.safeAreaLayoutGuide.bottomAnchor,
             right: view.rightAnchor,
-            paddingTop: 20,
+            paddingTop: 20
+        )
+        
+        scrollView.contentSize = CGSize(
+            width: UIScreen.main.bounds.width,
+            height: UIScreen.main.bounds.height - 300
+        )
+        
+        collectionView.anchor(
+            top: scrollView.topAnchor,
+            left: view.leftAnchor,
+            right: view.rightAnchor,
             paddingLeft: 20,
             paddingRight: 20,
             height: 132
@@ -181,6 +250,41 @@ final class HomeController: BaseController {
             paddingTop: 30,
             paddingLeft: 20
         )
+        
+        promotionView.anchor(
+            top: promotionLabel.bottomAnchor,
+            left: view.leftAnchor,
+            right: view.rightAnchor,
+            paddingTop: 20,
+            paddingLeft: 20,
+            paddingRight: 20,
+            height: 133
+        )
+        
+        offerLabel.anchor(
+            top: promotionView.topAnchor,
+            left: promotionView.leftAnchor,
+            paddingTop: 20,
+            paddingLeft: 20
+        )
+        
+        discountLabel.anchor(
+            top: offerLabel.bottomAnchor,
+            left: promotionView.leftAnchor,
+            paddingTop: 20,
+            paddingLeft: 20
+        )
+        
+        bannerImage.anchor(
+            top: promotionView.topAnchor,
+            right: promotionView.rightAnchor,
+            paddingTop: -70,
+            paddingRight: 20,
+            width: 140,
+            height: 133
+        )
+        
+        promotionView.backgroundColor = .primary
     }
     
     private func setupCollection() {

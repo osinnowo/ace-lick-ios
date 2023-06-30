@@ -16,13 +16,13 @@ final class MainCoordinator: Coordinator {
     }
     
     func start() {
-        guard let viewController = MainRouter.start(mainCoordinator: self).entry else { return  }
-        
-        self.navigationController.pushViewController(
-            viewController,
-            animated: true
-        )
-       // showDashboard()
+//        guard let viewController = MainRouter.start(mainCoordinator: self).entry else { return  }
+//        
+//        self.navigationController.pushViewController(
+//            viewController,
+//            animated: true
+//        )
+        showDashboard()
     }
     
     func showLogin() {
