@@ -33,7 +33,7 @@ final class DashboardViewController: UITabBarController {
         if let items = tabBar.items {
              // Set the tint color for the unselected state
              for item in items {
-                 item.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
+                 item.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.kitIconGrey], for: .normal)
              }
              
              // Set the tint color for the selected state

@@ -24,3 +24,21 @@ extension UIViewController {
         view.layer.insertSublayer(gradientLayer, at: 0)
     }
 }
+
+extension UIView {
+    func addTwoToneGradientBackground(topColor: UIColor, bottomColor: UIColor) {
+        // Create the gradient layer
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = bounds
+        
+        // Set the gradient colors
+        gradientLayer.colors = [topColor.cgColor, bottomColor.cgColor]
+        
+        // Set the gradient direction from top to bottom
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 3.45)
+        
+        // Insert the gradient layer at the bottom of the view's layer hierarchy
+        layer.insertSublayer(gradientLayer, at: 0)
+    }
+}
