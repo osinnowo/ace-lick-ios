@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import RxSwift
 
 final class HomeController: BaseController {
     
     private var dataSource: CollectionViewDataSource<MenuCategoryCell, MenuItem>?
     private var menuItemSource: CollectionViewDataSource<MenuCell, MenuItem>?
+    private let viewModel = HomeViewModel()
+    private let disposeBag = DisposeBag()
+    private var items: [MenuItem] = []
     
     private var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -141,14 +145,13 @@ final class HomeController: BaseController {
         super.viewDidLoad()
         setupView()
         setupConstraint()
-        setupCollection()
         setupMenuItemCollection()
+        observeMenuItems()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
-    
     
     private func setupView() {
         view.addSubview(
@@ -287,12 +290,28 @@ final class HomeController: BaseController {
         promotionView.backgroundColor = .primary
     }
     
-    private func setupCollection() {
+    private func observeMenuItems() {
+        viewModel.retrieveItems()
+            .observe(on: MainScheduler.instance)
+            .subscribe(
+                onNext: { [weak self] items in
+                    self?.setupCollection(items)
+                },
+                
+                onError: { error in
+                    self.showAlert(message: error.localizedDescription)
+                }
+            )
+            .disposed(by: disposeBag)
+    }
+    
+    private func setupCollection(_ items: [MenuItem]) {
+        self.items = items
         dataSource = CollectionViewDataSource(
             identifier: "menu",
-            items: menuMockData,
+            items: self.items,
             configuration: { cell, path in
-                cell.item = menuMockData[path.row]
+                cell.item = self.items[path.row]
             },
             onTapEvent: { path in
                 self.chooseItem(path)
@@ -318,10 +337,10 @@ final class HomeController: BaseController {
     
     private func chooseItem(_ path: IndexPath) {
         DispatchQueue.main.async {
-            for (index, item) in menuMockData.enumerated() {
+            for var (_, item) in self.items.enumerated() {
                 item.isSelected = false
             }
-            menuMockData[path.row].isSelected = true
+            self.items[path.row].isSelected = true
             self.collectionView.delegate = self.dataSource
             self.collectionView.dataSource = self.dataSource
             self.collectionView.reloadData()
